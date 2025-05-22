@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Search Page</h1>
+    </header>
+    <main>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search here..." />
+            <button id="search-btn">Search</button>
+        </div>
+        <div id="search-results">
+            <!-- Display search results dynamically -->
+        </div>
+    </main>
+    <script>
+        // Handle search functionality
+        document.getElementById('search-btn').addEventListener('click', () => {
+            const query = document.getElementById('search-input').value.trim();
+            const resultsDiv = document.getElementById('search-results');
+
+            if (query) {
+                resultsDiv.innerHTML = `<p>Showing results for: <strong>${query}</strong></p>`;
+                // Logic to display search results can go here
+            } else {
+                resultsDiv.innerHTML = '<p>Please enter a search term!</p>';
+            }
+        });
+    </script>
+</body>
+</html>

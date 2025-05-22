@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Dr. Shyama Prasad Mukherjee University</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .opt {
+            cursor: pointer;
+            color: #fff;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
+        .opt:hover {
+            color: #007bff;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            list-style: none;
+            padding: 10px 0;
+            border-radius: 4px;
+        }
+
+        .dropdown-menu a {
+            color: #000;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Sign-In Container Styles */
+        .signin-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: 50px auto;
+        }
+
+        .signin-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .signin-container label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+
+        .signin-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .signin-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #d65e70;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .signin-container button:hover {
+            background-color: #c14e5d;
+        }
+
+        .signin-container .signup-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .signin-container .signup-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .signin-container .signup-link a:hover {
+            text-decoration: underline;
+        }
+        a {
+    color: inherit; /* Inherit color from parent, or set a specific color */
+    text-decoration: none; /* Remove underline */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1 class="logo">Dr. Shyama Prasad Mukherjee University</h1>
+        </div>
+        <div class="option">
+            <div class="opt"><a href="about.html">About</a></div>
+            <div class="opt"><a href="courses.html">Courses</a></div>
+            <div class="opt">
+                Menu
+                <ul class="dropdown-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="signin.html">Sign In</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+
+    <main>
+        <div class="signin-container">
+            <h2>Sign In</h2>
+            <form action="signin_process.php" method="POST">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                <button type="submit">Sign In</button>
+            </form>
+            <div class="signup-link">
+                Don't have an account? <a href="signup.html">Sign Up</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Dr. Shyama Prasad Mukherjee University</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Base styles */
+    :root {
+      --primary: #be123c;
+      --primary-hover: #9f1239;
+      --secondary: #f3f4f6;
+      --text: #111827;
+      --text-light: #6f7889;
+      --background: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --radius: 0.5rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
+      color: var(--text);
+      line-height: 1.5;
+      background-color: var(--background);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1rem;
+
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Header styles */
+    
+        .header {
+      background-color: #000;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .logo a {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .desktop-nav {
+      display: none;
+    }
+
+    .desktop-nav ul {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .desktop-nav a {
+      transition: color 0.3s;
+    }
+
+    .desktop-nav a:hover,
+    .desktop-nav a.active {
+      color: #f43f5e;
+    }
+
+    .mobile-menu-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+      padding: 1rem;
+      background-color: #000;
+    }
+
+    .mobile-nav.active {
+      display: block;
+    }
+
+    .mobile-nav ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 0.5rem 0;
+      transition: color 0.3s;
+    }
+
+    .mobile-nav a:hover,
+    .mobile-nav a.active {
+      color: #f43f5e;
+    } 
+    
+
+    /* Hero section styles */
+    .hero-section {
+      position: relative;
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    .about-hero {
+      background-image: url("uni3.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 1rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.125rem;
+      max-width: 36rem;
+      margin: 0 auto;
+    }
+
+    /* Content section styles */
+    .content-section {
+      padding: 5rem 1rem;
+    }
+
+    /* About page styles */
+    .about-content {
+      max-width: 64rem;
+      margin: 0 auto;
+    }
+
+    .about-content h2 {
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-content p {
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+    }
+
+    .about-text h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .learn-more {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+
+    .circle-btn {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .circle-btn:hover {
+      background-color: var(--secondary);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .value-card {
+      background-color: #fff1f2;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+    }
+
+    .value-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    /* Footer styles */
+    .footer {
+      background-color: #111827;
+      color: #fff;
+      padding: 3rem 1rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-column h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .footer-column ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-column a {
+      color: #9ca3af;
+      transition: color 0.3s;
+    }
+
+    .footer-column a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid #374151;
+    }
+
+    .footer-bottom p {
+      color: #9ca3af;
+    }
+
+    .footer-logo {
+      width: 8rem;
+      height: 4rem;
+    }
+
+    .footer-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      color: #9ca3af;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #fff;
+    }
+
+    /* Media queries */
+    @media (min-width: 640px) {
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .desktop-nav {
+        display: block;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+      }
+
+      .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-content h1 {
+        font-size: 4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+   <header class="header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="index.html">Dr. Shyama Prasad Mukherjee University</a>
+      </div>
+      <nav class="desktop-nav">
+        <ul>
+          
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="course.html">Courses</a></li>
+          <li><a href="index.html">Home</a></li>
+         
+        </ul>
+      </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav">
+      <ul>
+        
+        <li><a href="abouts.html" class="active">About</a></li>
+    <li><a href="course.html">Courses</a></li> 
+    <li><a href="index.html">Home</a></li>
+
+        
+      </ul>
+    </nav>
+  </header>
+
+   
+
+  <main>
+    <section class="hero-section about-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>About Us</h1>
+        <p>Learn about our history, mission, and vision for the future of education</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="about-content">
+          <h2>Our History</h2>
+          <p>
+            Dr. Shyama Prasad Mukherjee University was established with a vision to provide quality education that
+            empowers students to become leaders in their fields. Since our founding, we have been committed to academic
+            excellence, research innovation, and community service.
+          </p>
+
+          <div class="about-grid">
+            <div class="about-image">
+              <img src="sir.jpeg" alt="University history">
+            </div>
+            <div class="about-text">
+              <h3>Our Founder</h3>
+              <p>
+                Dr. Shyama Prasad Mukherjee was a visionary leader who believed in the transformative power of
+                education. His dedication to creating accessible, high-quality educational opportunities for all
+                continues to inspire our mission today.
+              </p>
+              <div class="learn-more">
+                <button class="circle-btn">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+                <span>Learn more about our founder</span>
+              </div>
+            </div>
+          </div>
+
+          <h2>Our Mission</h2>
+          <p>
+            Our mission is to provide transformative educational experiences that prepare students for success in a
+            rapidly changing world. We are committed to fostering critical thinking, creativity, and ethical leadership
+            through innovative teaching, research, and community engagement.
+          </p>
+
+          <h2>Our Vision</h2>
+          <p>
+            We envision a future where our university serves as a beacon of knowledge, innovation, and social impact. We
+            strive to be recognized globally for our academic excellence, research contributions, and commitment to
+            addressing the most pressing challenges of our time.
+          </p>
+
+          <div class="values-grid">
+            <div class="value-card">
+              <h3>Excellence</h3>
+              <p>We pursue the highest standards in teaching, research, and service.</p>
+            </div>
+            <div class="value-card">
+              <h3>Innovation</h3>
+              <p>We embrace creativity and new approaches to solving complex problems.</p>
+            </div>
+            <div class="value-card">
+              <h3>Integrity</h3>
+              <p>We uphold the highest ethical standards in all that we do.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>Privacy & Protection</h3>
+          <ul>
+            <li><a href="#">Report Copyright Violation</a></li>
+            <li><a href="#">Report Security Concern</a></li>
+            <li><a href="#">Intellectual Property Notice</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Website</h3>
+          <ul>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Digital Accessibility</a></li>
+            <li><a href="#">Privacy Statement</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Get In Touch</h3>
+          <ul>
+            <li><a href="#">Contact DSPMU</a></li>
+            <li><a href="#">Maps & Directions</a></li>
+            <li><a href="#">Jobs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>The President and Fellows of DSPMU College</p>
+        <div class="footer-logo">
+          <img src="logo.png" alt="DSPMU Logo">
+        </div>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.addEventListener("DOMContentLoaded", () => {
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mobileNav = document.getElementById("mobileNav");
+
+      if (mobileMenuBtn && mobileNav) {
+        mobileMenuBtn.addEventListener("click", () => {
+          mobileNav.classList.toggle("active");
+
+          // Toggle between menu and close icons
+          const icon = mobileMenuBtn.querySelector("i");
+          if (icon.classList.contains("fa-bars")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+          } else {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

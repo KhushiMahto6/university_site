@@ -11,7 +11,9 @@ body{
   /* overflow-x: hidden; */
 }
 
-/* Basic Header Styling */
+/* Basic Header style*/
+
+
 header {
   display: flex;
   justify-content: space-between; /* Aligns content to left and right */
@@ -21,10 +23,16 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional for subtle shadow effect */
 }
 
-/* Left Section - College Name */
+
 .header-left {
   display: flex;
   align-items: center;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Adds space between icons */
 }
 
 /* Logo text styling */
@@ -40,6 +48,7 @@ header {
   display: flex;
   align-items: center;
   gap: 20px; /* Adds space between icons */
+  color: whitesmoke;
 }
 
 /* Option Styling */
@@ -54,21 +63,46 @@ header {
   margin-left: 5px; /* Space between text and icon */
 }
 
-.opt:hover {
-  color: #007bff; /* Optional - Add hover effect */
+pt:hover {
+  color: rgb(199, 44, 95); 
 }
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-menu a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 
 /* Section Styling */
 .intro {
   position: relative;
-  height: 100vh; /* Adjust height as needed */
+  height: 85vh; /* Adjust height as needed */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: white;
   padding: 20px;
   overflow: hidden;
+  background-size: cover;
 }
 
 /* Background Image with Blur */
@@ -78,24 +112,12 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height:100%;
   background-image: url('uni.jpg'),linear-gradient(to bottom, transparent, white);; /* Replace with your image path */
   background-size: cover;
   background-position: center;
   filter: blur(2px); /* Adjust the blur effect as needed */
   z-index: -1; /* Ensures the background image is behind the text */
-}
-
-.intro{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
-  /*background: url(uni.jpg);*/
-  background-size: cover;
 }
 
 
@@ -162,7 +184,7 @@ header {
 #text5{
   padding-right: 10px;
   font-size: 3em;
-  color: rgb(76, 30, 30);
+  color: rgb(151, 50, 50);
 }
 
 .text5 h5{
@@ -170,6 +192,8 @@ header {
   text-align: left;
   text-decoration-line: underline;
 }
+
+
 
 #section5{
   min-height: 90vh;
@@ -214,11 +238,6 @@ header {
   margin-right: 20px;
   color: white;
 }
-
-/* .icon a{
-  text-decoration: none;
-  outline: none;
-} */
 
 .icon p{
   font-size: 1.5em;
@@ -352,6 +371,7 @@ header {
   width: 100%;
 }
 
+
 .last{
   padding-left: 100px;
   display: grid;
@@ -375,7 +395,7 @@ header {
   margin-top: 100px;
   padding-top: 60px;
   padding-bottom: 60px;
-  background-color: rgb(217, 184, 189);
+  background-color: rgb(196, 128, 138);
 }
 
 .foot{
@@ -502,4 +522,82 @@ header {
   text-decoration: none;
 }
 
+   body{
+        font-family: Arial, sans-serif;
+    }
+    .header-left .logo {
+        margin: 0;
+    }
+    .option {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+    .opt {
+        cursor: pointer;
+        position: relative;
+    }
+    .opt a {
+      text-decoration: none; /* Remove underline */
+      color: inherit; /* Inherit the color from the parent element */
+  }
+  
+  .opt a:hover {
+      color: rgb(210, 59, 110); /* Change color on hover (optional) */
+  }
+    
+    
+    
+.option {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+}
+
+
+.opt {
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.opt i {
+  margin-left: 5px; 
+}
+
+.opt:hover {
+  color: rgb(210, 59, 110); 
+}
+
+
+.dropdown-menu {
+  display: none;
+  list-style: none;
+  padding: 10px;
+  background:white;
+  border: 1px solid black;
+  position: absolute;
+  top: 100%; 
+  right: 0;
+  min-width: 150px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.dropdown-menu a {
+  text-decoration: none;
+  color: #0c0c0c;
+  display: block;
+  padding: 8px 12px;
+  transition: background 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+  background: rgb(190, 50, 83);
+  color:white;
+}
+
+.opt:hover .dropdown-menu {
+  display: block;
+}
 
